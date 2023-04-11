@@ -15,7 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen w-full flex-col items-center justify-center gap-4 px-8 text-center">
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
+        <h1 className="text-7xl font-bold my-4">GPT APP</h1>
         <Form answer={answer} setAnswer={setAnswer} />
         {answer && <div>{answer}</div>}
       </main>

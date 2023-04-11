@@ -31,7 +31,7 @@ export default function Form({ answer, setAnswer }) {
         />
         <button
           type="submit"
-          className="rounded-xl bg-neutral-900 px-4 font-medium text-white hover:bg-black/80"
+          className="my-3 rounded-xl bg-neutral-900 px-4 font-medium text-white hover:bg-black/80"
         >
           Generate Response
         </button>
