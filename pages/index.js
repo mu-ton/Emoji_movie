@@ -6,6 +6,7 @@ import Form from "./components/form";
 
 export default function Home() {
   const [answer, setAnswer] = useState("");
+  const [load, setLoad] = useState(false);
   return (
     <>
       <Head>
@@ -16,8 +17,17 @@ export default function Home() {
       </Head>
       <main className="flex min-h-screen w-full flex-col items-center justify-center gap-4 px-8 text-center">
         <h1 className="text-7xl font-bold my-4">GPT APP</h1>
-        <Form answer={answer} setAnswer={setAnswer} />
-        {answer && <div>{answer}</div>}
+        <Form
+          answer={answer}
+          setAnswer={setAnswer}
+          load={load}
+          setLoad={setLoad}
+        />
+        {answer && (
+          <div className="w-1/2 mt-4 roundex-xl border bg-white p-4 shadow-md transition duration-300 ease-out hover:bg-blue-100">
+            {answer}
+          </div>
+        )}
       </main>
     </>
   );
