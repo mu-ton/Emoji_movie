@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 export default function Form({ answer, setAnswer, load, setLoad }) {
   const { register, handleSubmit } = useForm();
   const onSubmit = async (prompt) => {
+    setLoad(true);
     setAnswer("");
 
     const response = await fetch("/api/ask", {
@@ -42,14 +43,21 @@ export default function Form({ answer, setAnswer, load, setLoad }) {
           {...register("prompt")}
           rows={4}
           maxLength={200}
-          className="border border-neutral-800 w-full"
+          className="textarea textarea-bordered textarea-primary my-1 border w-full p-2 text-primary-content bg-base-200"
         />
-        <button
-          type="submit"
-          className="py-1 my-3 rounded-xl bg-neutral-900 px-4 font-medium text-white hover:bg-black/80"
-        >
-          Generate Response
-        </button>
+        {!load ? (
+          <button
+            type="submit"
+            className="btn btn-primary w-full rounded-full font-bold my-3"
+          >
+            Generate Response
+          </button>
+        ) : (
+          // <div className="animate-pulse font-bold tracking-widest">
+          //   読み込み中…
+          // </div>
+          <progress className="progress progress-primary w-56"></progress>
+        )}
       </form>
     </div>
   );
