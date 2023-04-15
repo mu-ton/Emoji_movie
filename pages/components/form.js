@@ -1,11 +1,10 @@
-import axios from "axios";
 import { useForm } from "react-hook-form";
 
 export default function Form({ answer, setAnswer, load, setLoad }) {
   const { register, handleSubmit } = useForm();
   const onSubmit = async (prompt) => {
     setAnswer("");
-    console.log(prompt);
+
     const response = await fetch("/api/ask", {
       method: "POST",
       headers: {
