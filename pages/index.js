@@ -25,11 +25,6 @@ export default function Home() {
           load={load}
           setLoad={setLoad}
         />
-        {/* {answer && (
-          <div className="w-1/2 my-4 roundex-xl border  p-4 shadow-md transition duration-300 ease-out hover:bg-blue-900">
-            {answer}
-          </div>
-        )} */}
 
         {answer && (
           <div className="card w-1/2 bg-base-200 shadow-xl text-primary-content">

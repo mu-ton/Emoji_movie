@@ -1,6 +1,5 @@
 import { OpenAIStream } from "../../utils/OpenAIStream";
 
-//adding environment variable
 if (!process.env.OPENAI_API_KEY) {
   throw new Error("Missing API_KEY");
 }

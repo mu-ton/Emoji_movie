@@ -54,9 +54,6 @@ export default function Form({ answer, setAnswer, load, setLoad }) {
             <span className="animate-bounce text-xl">↓</span>
           </button>
         ) : (
-          // <div className="animate-pulse font-bold tracking-widest">
-          //   読み込み中…
-          // </div>
           <progress className="progress progress-primary w-56"></progress>
         )}
       </form>
