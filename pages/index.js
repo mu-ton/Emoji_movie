@@ -15,7 +15,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen w-full flex-col items-center justify-center gap-3 px-8 text-center">
-        <h1 className="text-7xl font-bold my-3 text-primary">GPT APP</h1>
+        <h1 className="text-7xl font-bold my-3 text-primary font-biz">
+          映画タイトル🎬
+        </h1>
 
         <Form
           answer={answer}
@@ -31,7 +33,7 @@ export default function Home() {
 
         {answer && (
           <div className="card w-1/2 bg-base-200 shadow-xl text-primary-content">
-            <div className="card-body font-bold">
+            <div className="card-body font-biz font-bold">
               <p>{answer}</p>
             </div>
           </div>

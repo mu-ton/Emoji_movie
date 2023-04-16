@@ -39,11 +39,11 @@ export default function Form({ answer, setAnswer, load, setLoad }) {
     <div className="w-full max-w-xl">
       <form onSubmit={handleSubmit(onSubmit)}>
         <textarea
-          placeholder="質問を入力してください"
+          placeholder="映画のタイトルを入力してください。AIが絵文字で表現します。"
           {...register("prompt")}
           rows={4}
           maxLength={200}
-          className="textarea textarea-bordered textarea-primary my-1 border w-full p-2 text-primary-content bg-base-200"
+          className="font-biz textarea textarea-bordered textarea-primary my-1 w-full p-2 text-primary-content bg-base-100 transition hover:bg-base-200"
         />
         {!load ? (
           <button
@@ -51,6 +51,7 @@ export default function Form({ answer, setAnswer, load, setLoad }) {
             className="btn btn-primary w-full rounded-full font-bold my-3"
           >
             Generate Response
+            <span className="animate-bounce text-xl">↓</span>
           </button>
         ) : (
           // <div className="animate-pulse font-bold tracking-widest">

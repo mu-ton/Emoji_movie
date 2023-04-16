@@ -15,10 +15,14 @@ export default async function handler(req) {
   if (!prompt) {
     return new Response("No prompt", { status: 400 });
   }
-
+  const systemContent =
+    "あなたは映画のタイトルを絵文字で表現することが得意です。映画の作品名を言われたら、その作品の概要をいくつかの絵文字で表現してください。";
   const payload = {
     model: "gpt-3.5-turbo",
-    messages: [{ role: "user", content: prompt }],
+    messages: [
+      { role: "system", content: systemContent },
+      { role: "user", content: prompt },
+    ],
     max_tokens: 1000,
     stream: true,
     n: 1,
